@@ -1,19 +1,19 @@
 class Stack{
     constructor(){
-        this.size=100;
-        this.stack=[]
-        this.top=-1;
+        this.size=100;// limit the size
+        this.stack=[] // initilize as array
+        this.top=-1; // see the value is empty
     }
-    push(value){
-        if(this.isFull()){
-            return false;
+    push(value){ // let s push it
+        if(this.isFull()){ // check if it is full
+            return false; // return false
         }
-        this.top++;
-        this.stack[this.top] = value
-        return true;
+        this.top++; // it should be placed on the top  and incremented
+        this.stack[this.top] = value // then the increment value should be placed in stack which is array
+        return true; // return true;
     }
-    isFull(){
-        return this.top === this.size-1
+    isFull(){ // see if it is exceeded to the allowed maxSize
+        return this.top === this.size-1 
     }
     pop(){
         if(this.isEmpty()){
