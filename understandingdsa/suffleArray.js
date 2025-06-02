@@ -9,6 +9,15 @@ display(suffleArray(arr))
 const capatalizeString=(str)=>str.charAt(0).toUpperCase() + str.slice(1)
 const findgapDate=(date1,date2)=>Math.ceil(Math.abs(date1.getTime() - date2.getTime())/86400000)
 const randomHax = () => `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6,'0')}`
+const repeatLetter=(str,letter)=>str.split(letter).length-1
+// check if a number is prime
+const checkPrime=(num)=>{
+    if(num <=1 ) return false;
+    for(let i=2; i <= Math.sqrt(num); i++){
+        if(num%i === 0)return false;
+    }
+    return 
+}
 
 document.querySelector("#fun").innerHTML = `
 
@@ -17,4 +26,5 @@ document.querySelector("#fun").innerHTML = `
 <h1>The Result is : ${capatalizeString("find the programmer")}</h1>
 <h1 class={color:red}>The Result is : ${findgapDate(new Date('2021-5-25'),new Date('2016-5-25'))}</h1>
 <h1 style=color:${randomHax()}>The Result is : ${randomHax()}</h1>
+<h1 style=color:${randomHax()}>The Result is : ${repeatLetter("Find the cats",'t')}</h1>
 `
