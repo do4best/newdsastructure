@@ -18,6 +18,15 @@ const checkPrime=(num)=>{
     }
     return 
 }
+const sliceArray=(arr)=>arr.slice(1,3)
+const sumArray=(arr)=>arr.reduce((a,b)=>a+b,0)
+const getCurrentDate=()=>{
+    let date = new Date();
+    let day = String(date.getDate()).padStart(2,'0')
+    const Month = String(date.getMonth()+1).padStart(2,'0')
+    const year = date.getFullYear();
+    return `${date}/${Month}/${year}`
+}
 
 document.querySelector("#fun").innerHTML = `
 
@@ -27,4 +36,8 @@ document.querySelector("#fun").innerHTML = `
 <h1 class={color:red}>The Result is : ${findgapDate(new Date('2021-5-25'),new Date('2016-5-25'))}</h1>
 <h1 style=color:${randomHax()}>The Result is : ${randomHax()}</h1>
 <h1 style=color:${randomHax()}>The Result is : ${repeatLetter("Find the cats",'t')}</h1>
+<h1 style=color:${randomHax()}>The Result is : ${sliceArray(arr)}</h1>
+<h1 style=color:${randomHax()}>The Result is : ${sumArray(arr)}</h1>
+<h1 style=color:${randomHax()}>The Result is : ${getCurrentDate()}</h1>
+
 `
