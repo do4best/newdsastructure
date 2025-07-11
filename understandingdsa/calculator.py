@@ -26,8 +26,11 @@ def clear():
     field.delete("1.0","end")
 
 root = Tk()
-root.geometry("300x300")
-field = Text(root,height=2,width=21,font=("New Times Roman",15))
+root.title("A Simple Calculator")
+root.geometry("275x252+300+20")
+root.resizable(False,False)
+root.attributes("-alpha", 0.6)
+field = Text(root,height=2,width=23,font=("New Times Roman",15))
 field.grid(row=1,column=1,columnspan=4)
 
 # buttons defining
@@ -68,7 +71,7 @@ open_left = Button(root,text="(",command=lambda:add_to_field("("),width=5,font=(
 open_left.grid(row=6,column=1)
 open_right = Button(root,text=")",command=lambda:add_to_field(")"),width=5,font=("New Times Roman",15))
 open_right.grid(row=6,column=2)
-btn_equal = Button(root,text="=",command=lambda:calculate(),width=12,font=("New Times Roman",15))
+btn_equal = Button(root,text="=",command=lambda:calculate(),width=12,font=("New Times Roman",15),fg="white",bg="blue")
 btn_equal.grid(row=6,column=3,columnspan=2)
 root.mainloop()
 
